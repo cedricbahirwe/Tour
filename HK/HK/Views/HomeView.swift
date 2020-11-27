@@ -27,9 +27,11 @@ struct HomeView: View {
             
         }
     }
-    private func index(at row: Int, and column: Int) -> Int {
+    
+    public func index(at row: Int, and column: Int) -> Int {
         return (((self.column * (row + 1)) + column + 1) - self.row)-1
     }
+    
 }
 
 struct HomeView_Previews: PreviewProvider {

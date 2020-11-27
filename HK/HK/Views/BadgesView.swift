@@ -9,6 +9,11 @@
 import SwiftUI
 
 struct BadgesView: View {
+    
+    @State private  var data = ["cedric", "John", "ali", "Isak", "Johson", "alezander", "wuiin"]
+    
+    @State var row = 4
+    @State var column = 2
     var body: some View {
         VStack(spacing: 0) {
             HeaderView()
