@@ -40,6 +40,8 @@ struct ProfileView: View {
             Rectangle().fill(Color.gray).frame(height: 0.5)
         }
         .padding(.horizontal, 8)
+        .offset(y: -10)
+
         
     }
 }

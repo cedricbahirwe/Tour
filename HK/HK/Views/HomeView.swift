@@ -16,21 +16,9 @@ struct HomeView: View {
     @State private var categories = CategoryItem.getCategories()
     var body: some View {
         VStack(spacing: 0) {
-            Image("KigaliCityPhoto-2018")
-                .frame(width: size.width, height: size.height*0.25)
-                .edgesIgnoringSafeArea(.top)
-                .shadow(color: Color(.darkGray), radius: 4, x: 0, y: 3)
-                .overlay(
-                    Image("hello-kigali-splash")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 120, height: 80)
-                        .padding(.leading)
-                    , alignment: .topLeading
-            )
+            HeaderView()
             
             ProfileView(isLoggedIn: .constant(true))
-                .offset(y: -10)
             GridStack(rows: 4, columns: 4) { (row, column) in
                 CategoryView(title: self.categories[self.index(at: row, and: column)].name, image: self.categories[self.index(at: row, and: column)].image)
             }
@@ -47,5 +35,22 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+    }
+}
+
+struct HeaderView: View {
+    var body: some View {
+        Image("KigaliCityPhoto-2018")
+            .frame(width: size.width, height: size.height*0.25)
+            .edgesIgnoringSafeArea(.top)
+            .shadow(color: Color(.darkGray), radius: 4, x: 0, y: 3)
+            .overlay(
+                Image("hello-kigali-splash")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 120, height: 80)
+                    .padding(.leading)
+                , alignment: .topLeading
+        )
     }
 }
