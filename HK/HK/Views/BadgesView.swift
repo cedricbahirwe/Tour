@@ -19,7 +19,31 @@ struct BadgesView: View {
             HeaderView()
             ProfileView(isLoggedIn: .constant(true))
             Spacer()
+            
+            List {
+                GridStack(rows: 4, columns: 2) { row, column in
+                    if self.indexFor(row, column) < self.data.count-1 {
+                        VStack {
+                            Image("badge")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(maxWidth: 200)
+                                .onTapGesture {
+                                    print(row, column)
+                            }
+                            
+                            Text(self.data[self.indexFor(row, column)])
+                        }
+                    } else {
+                        Spacer()
+                    }
+                }
+            }
         }
+    }
+    public func indexFor(_ row: Int, _ column: Int) -> Int {
+        let index =  row * 2 + column;
+        return index
     }
 }
 
