@@ -22,7 +22,7 @@ struct BadgesView: View {
             
             List {
                 GridStack(rows: 4, columns: 2) { row, column in
-                    if self.indexFor(row, column) < self.data.count-1 {
+                    if self.indexFor(row, column) < self.data.count {
                         VStack {
                             Image("badge")
                                 .resizable()
@@ -37,6 +37,17 @@ struct BadgesView: View {
                     } else {
                         Spacer()
                     }
+                }
+                HStack {
+                    Spacer()
+                    Button(action: {}) {
+                        Text("Show All Badges")
+                            .foregroundColor(.white)
+                            .frame(width: 190, height: 40)
+                            .background(Color(.brandPrimary))
+                            .clipShape(Capsule())
+                    }
+                    Spacer()
                 }
             }
         }

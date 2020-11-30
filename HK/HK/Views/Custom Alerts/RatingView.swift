@@ -32,6 +32,7 @@ struct RatingView: View {
                     Spacer()
                     Image(systemName: "plus.circle.fill")
                         .foregroundColor(.gray)
+                        .rotationEffect(.degrees(45))
                 }
                 
                 Text("Are these items/services the ")
@@ -48,8 +49,8 @@ struct RatingView: View {
                         }
                         .padding(.horizontal, 5)
                         .padding(.vertical, 5)
-                        .foregroundColor(.white)
-                        .background(Color.black.opacity(0.8))
+                        .foregroundColor(Color(.systemBackground))
+                        .background(Color(.label))
                         .clipShape(Capsule())
                     }
                 }
@@ -76,5 +77,6 @@ struct RatingView: View {
 struct RatingView_Previews: PreviewProvider {
     static var previews: some View {
         RatingView()
+//         .environment(\.colorScheme, .dark)
     }
 }
