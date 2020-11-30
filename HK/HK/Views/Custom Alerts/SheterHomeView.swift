@@ -10,47 +10,56 @@ import SwiftUI
 
 struct SheterHomeView: View {
     var body: some View {
-        VStack {
-            Image("virus")
-            VStack {
-                Text("Stay safe sheltering at home.")
-                Text("Collect  a special badges!")
-            }
-            .font(.system(size: 18, weight: .light))
+        ZStack {
+            Spacer()
+                .edgesIgnoringSafeArea(.all)
+                .frame(width: UIScreen.main.bounds.size.width)
+                .background(Color.white.opacity(0.75).edgesIgnoringSafeArea(.all) )
+                .animation(.interpolatingSpring(stiffness: 300.0, damping: 30.0, initialVelocity: 10.0))
             
             VStack {
-                Text("For official information on the pandemic in")
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.5)
-                Text("Rwanda visit MOH Website.")
-            }
-            .padding(.vertical)
-            
-            VStack(spacing: 0) {
-                Color.gray.frame(height: 0.5)
-                Button(action: {}) {
-                    Text("Check In - Shelting at home!")
-                        .bold()
-                        .foregroundColor(Color(.brandPrimary))
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 40)
+                Image("virus")
+                VStack {
+                    Text("Stay safe sheltering at home.")
+                    Text("Collect  a special badges!")
                 }
-                Color.gray.frame(height: 0.5)
-                Button(action: {}) {
-                    Text("Cancel")
-                        .bold()
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 40)
+                .font(.system(size: 18, weight: .light))
+                
+                VStack {
+                    Text("For official information on the pandemic in")
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5)
+                    Text("Rwanda visit ")
+                    + Text("MOH Website.").underline()
                 }
+                .padding(.vertical, 14)
+                
+                VStack(spacing: 5) {
+                    Color.gray.frame(height: 0.5)
+                    Button(action: {}) {
+                        Text("Check In - Shelting at home!")
+                            .bold()
+                            .foregroundColor(Color(.brandPrimary))
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 40)
+                    }
+                    Color.gray.frame(height: 0.5)
+                    Button(action: {}) {
+                        Text("Cancel")
+                            .bold()
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 40)
+                    }
+                }
+                
+                
             }
-            
-            
+            .padding(.top)
+            .background(Color(.brandGrey))
+            .cornerRadius(20)
+            .shadow(radius: 5)
+            .padding()
         }
-        .padding(.top)
-        .background(Color(.systemBackground))
-        .cornerRadius(20)
-        .shadow(radius: 5)
-        .padding()
         
     }
 }
