@@ -10,7 +10,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-       BadgesView()
+        NavigationView {
+            HomeView()
+                .navigationBarHidden(true)
+
+            .navigationBarTitle("", displayMode: .inline)
+        }
+        
     }
 }
 

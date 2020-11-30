@@ -10,9 +10,6 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State var row = 4
-    @State var column = 4
-    
     @State private var categories = CategoryItem.getCategories()
     var body: some View {
         VStack(spacing: 0) {
@@ -20,16 +17,16 @@ struct HomeView: View {
             
             ProfileView(isLoggedIn: .constant(true))
             GridStack(rows: 4, columns: 4) { (row, column) in
-                CategoryView(title: self.categories[self.index(at: row, and: column)].name, image: self.categories[self.index(at: row, and: column)].image)
+                CategoryView(title: self.categories[self.indexAt(row, column)].name, image: self.categories[self.indexAt(row, column)].image)
             }
-            
             Spacer()
             
         }
     }
     
-    public func index(at row: Int, and column: Int) -> Int {
-        return (((self.column * (row + 1)) + column + 1) - self.row)-1
+    public func indexAt(_ row: Int, _ column: Int) -> Int {
+        let index = row * 4 + column
+        return index
     }
     
 }
@@ -37,6 +34,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+//            .environment(\.colorScheme, .dark)
     }
 }
 

@@ -13,12 +13,16 @@ struct CategoryView: View {
     let image: UIImage
     
     var body: some View {
-        VStack(spacing: 3) {
-            Image(uiImage: image)
-                .resizable()
-                .frame(width: 70, height: 70)
-            Text(title)
-                .font(.callout)
+        NavigationLink(destination: SiteView()) {
+            VStack(spacing: 3) {
+                Image(uiImage: image)
+                    .resizable()
+                    .renderingMode(.original)
+                    .frame(width: 70, height: 70)
+                Text(title)
+                    .font(.callout)
+                    .foregroundColor(Color(.label))
+            }
         }
     }
 }

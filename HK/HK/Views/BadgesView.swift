@@ -18,9 +18,8 @@ struct BadgesView: View {
         VStack(spacing: 0) {
             HeaderView()
             ProfileView(isLoggedIn: .constant(true))
-            Spacer()
             
-            List {
+            ScrollView(.vertical, showsIndicators: false) {
                 GridStack(rows: 4, columns: 2) { row, column in
                     if self.indexFor(row, column) < self.data.count {
                         VStack {
@@ -53,7 +52,7 @@ struct BadgesView: View {
         }
     }
     public func indexFor(_ row: Int, _ column: Int) -> Int {
-        let index =  row * 2 + column;
+        let index =  row * 2 + column
         return index
     }
 }

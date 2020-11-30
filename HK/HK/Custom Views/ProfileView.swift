@@ -33,15 +33,18 @@ struct ProfileView: View {
                     .font(.system(size: 16, weight: .bold))
                     .foregroundColor(.gray)
                 }
-                Image("settingscog")
-                    .resizable()
-                    .frame(width: 30, height: 30)
+                NavigationLink(destination: BadgesView()) {
+                    Image("settingscog")
+                        .resizable()
+                        .foregroundColor(Color(.bestOfGrey))
+                        .frame(width: 30, height: 30)
+                }
             }
             Rectangle().fill(Color.gray).frame(height: 0.5)
         }
         .padding(.horizontal, 8)
         .offset(y: -10)
-
+        
         
     }
 }

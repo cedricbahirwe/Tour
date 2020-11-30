@@ -50,6 +50,7 @@ struct SheterHomeView: View {
                             .frame(maxWidth: .infinity)
                             .frame(height: 40)
                     }
+                    .padding(.bottom, 5)
                 }
                 
                 
