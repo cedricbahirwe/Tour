@@ -68,14 +68,13 @@ struct SiteView: View {
                             RedButton("Feedback") {
                                 self.showCheckinAlert.toggle()
                             }
-                            Image("wifiyes")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                            if self.isUpdated {
+                            CircleImage(title: "wifiyes", size: .large)
+
+                            if !self.isUpdated {
                             VStack(spacing: 1) {
-                                Image("menuIcon")
-                                    .resizable()
-                                    .frame(width: 40, height: 40)
+                                CircleImage(title: "menuIcon", size: .large)
+
+                                
                                 Text("Menu from")
                                     .minimumScaleFactor(0.5)
                                 Text("Guhemba")
