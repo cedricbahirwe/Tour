@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct VirusAlertView: View {
+    @Binding var isShown: Bool
+
     var body: some View {
         ZStack {
             Spacer()
@@ -48,7 +50,9 @@ struct VirusAlertView: View {
                             .frame(height: 40)
                     }
                     Color.gray.frame(height: 0.5)
-                    Button(action: {}) {
+                    Button(action: {
+                        self.isShown.toggle()
+                    }) {
                         Text("Cancel")
                             .bold()
                             .frame(maxWidth: .infinity)
@@ -68,6 +72,6 @@ struct VirusAlertView: View {
 
 struct VirusAlertView_Previews: PreviewProvider {
     static var previews: some View {
-        VirusAlertView()
+        VirusAlertView(isShown: .constant(true))
     }
 }

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct SheterHomeView: View {
+    @Binding var isShown: Bool
     var body: some View {
         ZStack {
             Spacer()
@@ -44,7 +45,9 @@ struct SheterHomeView: View {
                             .frame(height: 40)
                     }
                     Color.gray.frame(height: 0.5)
-                    Button(action: {}) {
+                    Button(action: {
+                        self.isShown.toggle()
+                    }) {
                         Text("Cancel")
                             .bold()
                             .frame(maxWidth: .infinity)
@@ -67,7 +70,7 @@ struct SheterHomeView: View {
 
 struct SheterHomeView_Previews: PreviewProvider {
     static var previews: some View {
-        SheterHomeView()
+        SheterHomeView(isShown: .constant(true))
         //            .environment(\.colorScheme, .dark)
     }
 }

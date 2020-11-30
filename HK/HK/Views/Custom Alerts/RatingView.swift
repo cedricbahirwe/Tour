@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct RatingView: View {
-    @State private var isShown = true
+    @Binding var isShown: Bool
     var body: some View {
         ZStack {
             Spacer()
@@ -17,13 +17,6 @@ struct RatingView: View {
                 .frame(width: UIScreen.main.bounds.size.width)
                 .background(isShown ? Color.white.opacity(0.75).edgesIgnoringSafeArea(.all) : Color.clear.edgesIgnoringSafeArea(.all))
                 .animation(.interpolatingSpring(stiffness: 300.0, damping: 30.0, initialVelocity: 10.0))
-                .gesture(
-                    TapGesture()
-                        .onEnded { _ in
-                            self.isShown = false
-                    }
-            )
-            
             VStack {
                 HStack {
                     Text("Ikawa Cafe")
@@ -33,6 +26,9 @@ struct RatingView: View {
                     Image(systemName: "plus.circle.fill")
                         .foregroundColor(.gray)
                         .rotationEffect(.degrees(45))
+                        .onTapGesture {
+                            self.isShown = false
+                    }
                 }
                 
                 Text("Are these items/services the ")
@@ -76,7 +72,7 @@ struct RatingView: View {
 
 struct RatingView_Previews: PreviewProvider {
     static var previews: some View {
-        RatingView()
+        RatingView(isShown: .constant(true))
 //         .environment(\.colorScheme, .dark)
     }
 }

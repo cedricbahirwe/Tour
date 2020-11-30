@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ModalView<Content: View> : View {
     @GestureState private var dragState = DragState.inactive
+    
     @Binding var isShown:Bool
     
     private func onDragEnded(drag: DragGesture.Value) {
