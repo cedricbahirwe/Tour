@@ -22,6 +22,8 @@ struct HomeView: View {
             Spacer()
             
         }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
     
     public func indexAt(_ row: Int, _ column: Int) -> Int {

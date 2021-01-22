@@ -89,6 +89,8 @@ struct SiteView: View {
                 }
             }
         }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 }
 

@@ -24,7 +24,11 @@ struct MapsView: View {
                     .shadow(color: Color(.darkGray), radius: 4, x: 0, y: 4)
                     .overlay(
                         HStack {
-                            Image("searchbutton")
+                            NavigationLink(
+                                destination: SiteListView()) {
+                                Image("searchbutton")
+                            }
+                            
                             TextField("What ya looking for?", text: .constant(""))
                                 .font(.system(size: 16, weight: .bold))
                                 .padding(.vertical, 6)
@@ -43,8 +47,12 @@ struct MapsView: View {
                 }) {
                     Circle()
                         .fill(Color.clear)
-                        .frame(width: 70, height: 70)
-                        .overlay(PulseView($getUserLocation))
+                        .overlay(
+                            PulseView($getUserLocation)
+                                .scaleEffect(0.6)
+                        )
+                        .frame(width: 50, height: 50)
+
                 }
             }.padding()
         }

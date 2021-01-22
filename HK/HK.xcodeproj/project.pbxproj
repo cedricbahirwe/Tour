@@ -110,7 +110,6 @@
 				825005A2256F8DF900338D0B /* Custom Views */,
 				825005A4256F8E1400338D0B /* Extensions */,
 				82FB714C256F9C6D00DD0801 /* Models */,
-				825005A3256F8E0900338D0B /* Helpers Methods */,
 				82500593256F8DE000338D0B /* Assets.xcassets */,
 				82500598256F8DE000338D0B /* LaunchScreen.storyboard */,
 				8250059B256F8DE000338D0B /* Info.plist */,
@@ -153,13 +152,6 @@
 				826F6C9B257113B700ED9A81 /* Button.swift */,
 			);
 			path = "Custom Views";
-			sourceTree = "<group>";
-		};
-		825005A3256F8E0900338D0B /* Helpers Methods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Helpers Methods";
 			sourceTree = "<group>";
 		};
 		825005A4256F8E1400338D0B /* Extensions */ = {
@@ -230,7 +222,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Cedric Bahirwe";
 				TargetAttributes = {
 					82500586256F8DDE00338D0B = {
@@ -344,6 +336,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -404,6 +397,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

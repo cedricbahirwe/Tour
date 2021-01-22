@@ -12,9 +12,9 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             HomeView()
+                .navigationBarTitle("", displayMode: .inline)
                 .navigationBarHidden(true)
 
-            .navigationBarTitle("", displayMode: .inline)
         }
         
     }

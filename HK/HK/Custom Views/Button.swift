@@ -16,10 +16,14 @@ struct PulseView: UIViewRepresentable {
     init(_ tapped: Binding<Bool>) {
         _tapped = tapped
         self.image = #imageLiteral(resourceName: "userloc")
+        
     }
     
     func makeUIView(context: Context) -> UIImageView {
         let imageView = UIImageView(image: UIImage(named: "userloc"))
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        imageView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
         return imageView
     }
     

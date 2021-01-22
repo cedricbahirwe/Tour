@@ -10,56 +10,64 @@ import SwiftUI
 
 struct SiteListView: View {
     var body: some View {
-        List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
-            HStack {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("Ikawa cafe ")
-                        .bold()
-                        .font(.body)
-                    HStack {
-                        Text("3.9")
-                        ForEach(0..<5) { item in
-                            Image(systemName: item <= 3 ? "star.fill" : "star")
-                                .imageScale(.small)
-                        }
-                        Spacer()
-                    }
-                    .foregroundColor(.orange)
-                    
-                    VStack(alignment: .leading, spacing: 3) {
-                        Text("You voted 'Best Of Kigali':")
-                            .fontWeight(.semibold)
-                        Text("Coffee, Remote work")
-                            .font(.system(size: 14, weight: .light))
-                            .italic()
-                    }
-                    
-                    VStack(alignment: .leading, spacing: 3) {
-                        Text("Rated 'Best of Kigali' for:")
-                            .fontWeight(.semibold)
-                        ForEach(0..<2) { index in
-                            HStack(spacing: 5) {
-                                Image("bestof")
-                                    .resizable()
-                                    .frame(width: 20, height: 20)
-                                Text("Coffee\(index+1)")
-                                    .font(.system(size: 14, weight: .light))
-                                    .italic()
+        VStack(alignment: .leading) {
+            Text("Sites")
+                .font(.system(size: 50, weight: .bold))
+                .padding(.leading)
+            List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
+                HStack {
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text("Ikawa cafe ")
+                            .bold()
+                            .font(.body)
+                        HStack {
+                            Text("3.9")
+                            ForEach(0..<5) { item in
+                                Image(systemName: item <= 3 ? "star.fill" : "star")
+                                    .imageScale(.small)
                             }
+                            Spacer()
+                        }
+                        .foregroundColor(.orange)
+                        
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("You voted 'Best Of Kigali':")
+                                .fontWeight(.semibold)
+                            Text("Coffee, Remote work")
+                                .font(.system(size: 14, weight: .light))
+                                .italic()
                         }
                         
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("Rated 'Best of Kigali' for:")
+                                .fontWeight(.semibold)
+                            ForEach(0..<2) { index in
+                                HStack(spacing: 5) {
+                                    Image("bestof")
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
+                                    Text("Coffee\(index+1)")
+                                        .font(.system(size: 14, weight: .light))
+                                        .italic()
+                                }
+                            }
+                            
+                        }
+                        
+                    }.padding(.bottom, 5)
+                    VStack {
+                        CircleImage(title: "wifiyes", size: .large)
+                        CircleImage(title: "bestof", size: .large)
+                        CircleImage(title: "menuIcon", size: .large)
+    //                    Spacer()
                     }
-                    
-                }.padding(.bottom, 5)
-                VStack {
-                    CircleImage(title: "wifiyes", size: .large)
-                    CircleImage(title: "bestof", size: .large)
-                    CircleImage(title: "menuIcon", size: .large)
-//                    Spacer()
                 }
+                //            .overlay(Color.gray.frame(height: 0.5), alignment: .bottom)
             }
-            //            .overlay(Color.gray.frame(height: 0.5), alignment: .bottom)
         }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        
     }
 }
 
