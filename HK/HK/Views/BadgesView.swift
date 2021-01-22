@@ -50,6 +50,7 @@ struct BadgesView: View {
                 }
             }
         }
+        .poppableView()
     }
     public func indexFor(_ row: Int, _ column: Int) -> Int {
         let index =  row * 2 + column
@@ -60,5 +61,29 @@ struct BadgesView: View {
 struct BadgesView_Previews: PreviewProvider {
     static var previews: some View {
         BadgesView()
+    }
+}
+
+
+struct PopView: ViewModifier {
+    @Environment(\.presentationMode) var presentationMode
+    func body(content: Content) -> some View {
+        content
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
+            .gesture(
+                DragGesture(minimumDistance: 50)
+                    .onEnded { _ in
+                        withAnimation {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }
+                }
+        )
+    }
+}
+
+extension View {
+    func poppableView() -> some View {
+        ModifiedContent(content: self, modifier: PopView())
     }
 }

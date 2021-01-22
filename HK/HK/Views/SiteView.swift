@@ -89,14 +89,15 @@ struct SiteView: View {
                 }
             }
         }
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
+        .poppableView()
     }
 }
 
 struct SiteView_Previews: PreviewProvider {
     static var previews: some View {
-        SiteView()
+        NavigationView {
+            SiteView()
+        }
     }
 }
 

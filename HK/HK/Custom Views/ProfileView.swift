@@ -11,6 +11,8 @@ import SwiftUI
 struct ProfileView: View {
     @Binding var isLoggedIn: Bool
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         VStack {
             HStack {
@@ -33,11 +35,14 @@ struct ProfileView: View {
                     .font(.system(size: 16, weight: .bold))
                     .foregroundColor(.gray)
                 }
+                
+                if !presentationMode.wrappedValue.isPresented {
                 NavigationLink(destination: BadgesView()) {
                     Image("settingscog")
                         .resizable()
-                        .foregroundColor(Color(.bestOfGrey))
+                        .foregroundColor(Color(.darkGray))
                         .frame(width: 30, height: 30)
+                }
                 }
             }
             Rectangle().fill(Color.gray).frame(height: 0.5)

@@ -11,9 +11,9 @@ import SwiftUI
 public let size = UIScreen.main.bounds.size
 
 struct LoginView: View {
+    @State private var animate = false
     
     var body: some View {
-        NavigationView {
             ZStack {
                 
                 VStack {
@@ -128,7 +128,6 @@ struct LoginView: View {
             .navigationBarTitle("")
             .navigationBarHidden(true)
             .background(Color(.brandBlue).edgesIgnoringSafeArea(.all))
-        }
     }
 }
 

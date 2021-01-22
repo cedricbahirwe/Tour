@@ -65,8 +65,7 @@ struct SiteListView: View {
                 //            .overlay(Color.gray.frame(height: 0.5), alignment: .bottom)
             }
         }
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
+        .poppableView()
         
     }
 }

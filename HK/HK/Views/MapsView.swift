@@ -27,6 +27,7 @@ struct MapsView: View {
                             NavigationLink(
                                 destination: SiteListView()) {
                                 Image("searchbutton")
+                                    .renderingMode(.original)
                             }
                             
                             TextField("What ya looking for?", text: .constant(""))
@@ -56,6 +57,7 @@ struct MapsView: View {
                 }
             }.padding()
         }
+        
     }
 }
 
