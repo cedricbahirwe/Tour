@@ -17,7 +17,7 @@ struct BadgesView: View {
     var body: some View {
         VStack(spacing: 0) {
             HeaderView()
-            ProfileView(isLoggedIn: .constant(true))
+            ProfileView(isLoggedIn: .constant(true)).allowsHitTesting(false)
             
             ScrollView(.vertical, showsIndicators: false) {
                 GridStack(rows: 4, columns: 2) { row, column in

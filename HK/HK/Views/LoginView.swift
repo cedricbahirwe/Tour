@@ -44,19 +44,7 @@ struct LoginView: View {
                     Spacer()
                 }
                 .frame(width: size.width, height: size.height,alignment: .leading)
-                
-                VStack {
-                    Image("back")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 35, height: 35)
-                        .padding(.top, 30)
-                        .padding(.leading)
-                    Spacer()
-                }
-                .frame(width: size.width, height: size.height,alignment: .topLeading)
-                
-                
+ 
                 VStack(spacing: 10) {
                     VStack(spacing: 0) {
                         Image("hello-kigali-splash")

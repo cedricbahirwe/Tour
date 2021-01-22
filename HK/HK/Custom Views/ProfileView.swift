@@ -36,13 +36,11 @@ struct ProfileView: View {
                     .foregroundColor(.gray)
                 }
                 
-                if !presentationMode.wrappedValue.isPresented {
                 NavigationLink(destination: BadgesView()) {
                     Image("settingscog")
                         .resizable()
                         .foregroundColor(Color(.darkGray))
                         .frame(width: 30, height: 30)
-                }
                 }
             }
             Rectangle().fill(Color.gray).frame(height: 0.5)
